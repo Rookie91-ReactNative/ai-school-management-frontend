@@ -3,7 +3,7 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build_and_deploy_job:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
@@ -29,9 +29,9 @@ jobs:
       - name: Verify build output
         run: |
           echo "Build completed, checking dist folder..."
-          ls -la dist/ || dir dist\
+          ls -la dist/
           echo "Files in dist:"
-          find dist -type f || dir /s /b dist
+          find dist -type f | head -20
 
       - name: Install Azure Static Web Apps CLI
         run: npm install -g @azure/static-web-apps-cli
