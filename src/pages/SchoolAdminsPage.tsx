@@ -3,7 +3,7 @@ import { UserPlus, Users, Edit, Trash2, X, Building, Mail, User, Lock, Phone, Sh
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import api from '../services/api';
-import PermissionsModal from '../components/SchoolAdmins/Permissionsmodal';
+import PermissionsModal from '../components/SchoolAdmins/PermissionsModal';
 
 interface School {
     schoolID: number;
